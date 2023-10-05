@@ -45,12 +45,12 @@ class User
 
     public function getPassword(): string
     {
-        return $this->password;
+        return $this-> password_hash(password,,PASSWORD_DEFAULT);
     }
 
     public function setPassword(string $password): User
     {
-        $this->password = $password;
+        $this->password = password_hash($password,PASSWORD_DEFAULT);
         return $this;
     }
 
